@@ -4,6 +4,9 @@ import {
   Route,
   Switch
 } from "react-router-dom";
+import Main from './components/Main'
+import PageOne from './components/PageOne'
+import PageTwo from './components/PageTwo'
 import logo from './logo.svg';
 import './App.css';
 
@@ -36,14 +39,32 @@ state = {
           <div className="App">
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to React</h1>
+              <Main/>
             </header>
             <p className="App-intro">{this.state.data}</p>
           </div> 
-          </Route>
+           </Route>
+           <Route exact path="/pageone">
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <PageOne/>
+            </header>
+            <p className="App-intro">{this.state.data}</p>
+          </div> 
+           </Route>
+           <Route exact path="/pagetwo">
+          <div className="App">
+            <header className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <PageTwo/>
+            </header>
+            <p className="App-intro">{this.state.data}</p>
+          </div> 
+           </Route>
+        
     </Switch></Router>
-    );
-  }
+    )}
 }
 
 export default App;
